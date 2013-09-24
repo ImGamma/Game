@@ -1,0 +1,41 @@
+package com.game;
+
+import javax.swing.JFrame;
+
+import com.game.entity.ControlledEntity;
+import com.game.entity.UnControllableEntity;
+
+public class Game {
+	
+	public static ControlledEntity controlledEntity = new ControlledEntity();
+	
+	public static UnControllableEntity unControllableEntity = new UnControllableEntity();
+	
+	public static GameWindow window;
+	
+	public static void main(String[] args) {
+		JFrame window = new JFrame("Game - Official Client.");
+		
+		window.add(new GameWindow());
+
+		window.setResizable(false);
+		window.pack();
+		
+		window.setLocationRelativeTo(null);
+		window.setVisible(true);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public static GameWindow getWindow() {
+		return window;
+	}
+	
+	public static ControlledEntity getControlledEntity() {
+		return controlledEntity;
+	}
+	
+	public static UnControllableEntity getUnControllableEntity() {
+		return unControllableEntity;
+	}
+
+}
